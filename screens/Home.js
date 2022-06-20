@@ -9,6 +9,7 @@ import {
 } from "react-native";
 import { FontAwesome5 } from "@expo/vector-icons";
 import React, { useState, useEffect } from "react";
+import AsyncStorage from "@react-native-async-storage/async-storage";
 
 const { width: SCREEN_WIDTH, height: SCREEN_HEIGHT } = Dimensions.get("window");
 
@@ -30,6 +31,12 @@ function HomeScreen({ navigation: { navigate } }) {
     setTouchEndDate(new Date().getTime());
     setEgg();
   };
+
+  // useEffect(() => {
+  //   AsyncStorage.getItem("@user_info").then((choco) => {
+  //     console.log(choco);
+  //   });
+  // }, []);
 
   useEffect(() => {
     if (touchEndDate != undefined) {

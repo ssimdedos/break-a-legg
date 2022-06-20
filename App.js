@@ -6,6 +6,8 @@ import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import HomeScreen from "./screens/Home";
 import BagScreen from "./screens/Bag";
 import AuthScreen from "./screens/Auth";
+import SplashScreen from "./screens/Splash";
+import { useEffect } from "react";
 
 const Stack = createNativeStackNavigator();
 
@@ -15,9 +17,26 @@ export default function App() {
       <StatusBar style="auto" />
       <NavigationContainer>
         <Stack.Navigator>
-          <Stack.Screen name="login" component={AuthScreen} />
-          <Stack.Screen name="Break a Legg" component={HomeScreen} />
-          <Stack.Screen name="Bag" component={BagScreen} />
+          <Stack.Screen
+            name="Splash"
+            component={SplashScreen}
+            options={{ headerBackTitleVisible: false }}
+          />
+          <Stack.Screen
+            name="Login"
+            component={AuthScreen}
+            options={{ headerBackTitleVisible: false }}
+          />
+          <Stack.Screen
+            name="Break a Legg"
+            component={HomeScreen}
+            options={{ headerBackTitleVisible: false }}
+          />
+          <Stack.Screen
+            name="Bag"
+            component={BagScreen}
+            options={{ headerBackTitleVisible: false }}
+          />
         </Stack.Navigator>
       </NavigationContainer>
     </View>
