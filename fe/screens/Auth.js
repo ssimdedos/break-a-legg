@@ -8,11 +8,13 @@ const EXPO_CLIENT_ID =
   "860947032898-bitvl9bv2uif6sk9i5l45dpba2n33qcm.apps.googleusercontent.com";
 const ANDROID_CLIENT_ID =
   "60947032898-ch01hjhttp6nnna1oar57984vi0luqoq.apps.googleusercontent.com";
-
+const IOS_CLIENT_ID =
+  "860947032898-u7jj64vbdggnj36c5eqehl2n9o23r3bp.apps.googleusercontent.com";
 function AuthScreen({ navigation: { navigate } }) {
   const [request, response, promptAsync] = Google.useAuthRequest({
     expoClientId: EXPO_CLIENT_ID,
     androidClientId: ANDROID_CLIENT_ID,
+    iosClientId: IOS_CLIENT_ID,
     responseType: "id_token",
   });
 
