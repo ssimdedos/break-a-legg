@@ -1,6 +1,8 @@
+const ADRRESS = '13.125.39.83:7303';
+
 export async function getClientIds() {
   try {
-    const res = await fetch("http://15.164.228.39:7303/api/auth/getIds/");
+    const res = await fetch(`http://${ADRRESS}/api/auth/getIds/`);
     const data = await res.json();
     return data;
   } catch (err) {
@@ -10,11 +12,11 @@ export async function getClientIds() {
 
 export async function signIn(params) {
   if (params.id_token != undefined) {
-    const data = await fetch("http://15.164.228.39:7303/api/auth/checkGID/", {
-      method: "POST",
+    const data = await fetch(`http://${ADRRESS}/api/auth/checkGID/`, {
+      method: 'POST',
       headers: {
-        Accept: "application/json",
-        "Content-Type": "application/json",
+        Accept: 'application/json',
+        'Content-Type': 'application/json',
       },
       body: JSON.stringify({
         params,

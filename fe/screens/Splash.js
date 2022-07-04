@@ -1,12 +1,12 @@
-import React, { useEffect } from "react";
-import AsyncStorage from "@react-native-async-storage/async-storage";
-import { View, Text } from "react-native";
+import React, { useEffect } from 'react';
+import AsyncStorage from '@react-native-async-storage/async-storage';
+import { View, Text } from 'react-native';
 function SplashScreen({ navigation }) {
   useEffect(() => {
     setTimeout(() => {
-      AsyncStorage.getItem("@user_email").then((value) =>
-        navigation.replace(value === null ? "Login" : "Home")
-      );
+      AsyncStorage.getItem('@user_info').then((value) => {
+        navigation.replace(value === null ? 'Login' : 'Break a Legg');
+      });
     }, 1500);
   }, []);
   return (
